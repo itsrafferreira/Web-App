@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <!-- Definindo codificação de caracteres e viewport -->
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Alteração da Reserva</title>
+    <!-- Estilos CSS -->
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: linear-gradient(45deg, cyan, yellow);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 80px;
+            border-radius: 15px;
+            color: #fff;
+            max-width: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input,
+        label {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        label {
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Alinha os itens ao longo do eixo principal (horizontalmente) */
+        }
+        input[type="date"],
+        input[type="checkbox"] {
+            flex: 0.2; /* Ocupa o espaço restante disponível no label */
+        }
+        span {
+            margin-right: 1px; /* Espaçamento à direita para separar o texto do checkbox */
+        }
+        button {
+            background-color: dodgerblue;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 10px;
+            color: white;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: deepskyblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container principal para agrupar e organizar outros elementos dentro de uma Web App -->
+    <div class="container">
+      <!-- Título principal da página -->
+      <h1>Alteração da Reserva</h1>
+      <!-- Descrição da finalidade da página -->
+      <p>Altere as datas de início ou final ou cancele totalmente a sua reserva.</p>
+      <!-- Formulário de alteração da reserva -->
+      <form action="/alterar_reserva" method="post">
+        <!-- Campo de entrada para data de início -->
+        <label for="data_inicio">Nova Data de Início:</label>
+        <input type="date" id="data_inicio" name="data_inicio" required>
+        <!-- Campo de entrada para data final -->
+        <label for="data_final">Nova Data Final:</label>
+        <input type="date" id="data_final" name="data_final" required>
+        <!-- Checkbox para cancelamento total -->
+        <label for="cancelar_total">
+            <span>Cancelar Totalmente</span>
+            <input type="checkbox" id="cancelar_total" name="cancelar_total">
+        </label>
+        <!-- Botões de ação -->
+        <button type="submit">Confirmar Alterações</button>
+        <button type="button" onclick="ignorarAlteracao()">Ignorar Alteração e Avançar para Pagamento</button>
+    </form>
+  </div>
+
+  <!-- Script para redirecionar para a página de pagamento ao clicar no botão "Ignorar Alteração e Avançar para Pagamento" -->
+  <script>
+    function ignorarAlteracao() {
+      window.location.href = "/pagamento";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <!-- Definindo codificação de caracteres e viewport -->
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Título da página -->
+    <title>Lista de Reservas</title>
+    <!-- Estilos CSS -->
+    <style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: linear-gradient(45deg, cyan, yellow);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .container {
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 80px;
+        border-radius: 15px;
+        color: #fff;
+        max-width: 400px;
+        width: 100%;
+    }
+    input {
+        padding: 15px;
+        border: none;
+        outline: none;
+        font-size: 15px;
+        width: calc(100% - 30px);
+        margin-bottom: 10px;
+    }
+    button {
+        background-color: dodgerblue;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        font-size: 15px;
+    }
+    button:hover {
+        background-color: deepskyblue;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <!-- Container principal para agrupar e organizar outros elementos dentro de uma Web App -->
+    <div class="container">
+        <!-- Título principal da página -->
+        <h1>Lista de Reservas</h1>
+        <!-- Lista de reservas -->
+        <div class="reserva">
+            <img src="caminho/para/imagem1.jpg" alt="Veículo 1">    <!-- Resolve file -->
+            <div class="reserva-info">
+                <h2>Reserva 1</h2>
+                <p>Informações da reserva 1...</p>
+            </div>
+            <div class="botao-alteracao">
+                <button onclick="avancarParaAlteracao()">Alterar Reserva</button>
+            </div>
+        </div>
+        <div class="reserva">
+            <img src="caminho/para/imagem2.jpg" alt="Veículo 2">    <!-- Resolve file -->
+            <div class="reserva-info">
+                <h2>Reserva 2</h2>
+                <p>Informações da reserva 2...</p>
+            </div>
+         <div class="botao-alteracao">
+    <button onclick="avancarParaAlteracao()">Alterar Reserva</button>
+    <br>
+    <br>
+    <br>
+    <button onclick="saltarAlteracao()">Saltar Alterações</button>
+   </div>
+</div>
+        <!-- Adicione mais divs "reserva" conforme necessário para listar mais reservas -->
+    </div>
+    <!-- Script para avançar para a página de alteração da reserva -->
+    <script>
+    function avancarParaAlteracao() {
+        window.location.href = "reserva_alt.html";
+    }
+    function saltarAlteracao() {
+        // Redirecionar para a página de pagamento
+        window.location.href = "pagamento.html";
+    }
+    </script>
+</body>
+</html>
